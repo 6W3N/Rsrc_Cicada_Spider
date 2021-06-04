@@ -104,7 +104,7 @@ lists <- list.files("dats")
 
 ## Scraping using RDS
 foreach(i=1:length(lists)) %do% {
-	setwd("~/Desktop/labo/project/Spider_Prey_Cicada") 
+	setwd("./") 
 	tmp_filename <- lists[i]
 	unlist_dat <- formatting_func(filename=tmp_filename)
 	dirname <- tmp_filename %>% str_remove(".rds")
