@@ -31,7 +31,7 @@ urlScraping <- function(str){
 	goEnd$sendKeysToElement(list(key = "end"))
 	Sys.sleep(3)
 	webElem <- remDr$findElements(using = 
-			'xpath', "//a[contains(@class, 'wXeWr')]")
+			'xpath', "//a[contains(@class, 'wXeWr')]")  #CAUTION: The class we used to identify the image may change.
 		
 	urls <- foreach(i=1:length(webElem), .combine=rbind) %do% {	#Google shows 100 photos (or length(webElem))
 		remDr$mouseMoveToLocation(webElement = webElem[[i]]) 	#move location
